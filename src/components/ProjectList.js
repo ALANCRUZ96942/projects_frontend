@@ -1,7 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
- 
+import axios from "axios";
+import { API_URL } from "../config";
+
 function ProjectList() {
+
+
+    useEffect(() => {
+        console.log(`${API_URL}/api/projects`)
+        getAll()
+
+    }, []);
+    
+    
+    
+  const [data, setData] = useState([]);
+
+
+  function getAll() {
+    axios.get(`${API_URL}/api/projects`)
+      .then((response) => {
+        console.log("la respuesta es", response.data)
+        setData(response.data)
+
+      })
+  }
+
 
    return (
        <div class="flex flex-col">
