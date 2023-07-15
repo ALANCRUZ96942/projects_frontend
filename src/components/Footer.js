@@ -8,7 +8,7 @@ function Footer() {
 
   <footer id="sticky-footer" class="flex-shrink-0 py-4">
     <div class="container text-center">
-      <small>Copyright &copy; TEC 2022</small>
+      <small>Copyright &copy; AlanCruz 2023</small>
     </div>
   </footer>
   )
