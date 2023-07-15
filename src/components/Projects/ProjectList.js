@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { API_URL } from "../config";
+import { API_URL } from "../../config";
 import { DummyImage } from 'react-simple-placeholder-image'
 
 function ProjectList() {
     
     const [data, setData] = useState([]);
-     const url_link = API_URL+"/api/projects";
-    useEffect(() => {
-        
-        getAll()
 
+    const url_get_all = API_URL+"/api/projects";
+
+    useEffect(() => { 
+        getAll()
     }, []);
     
+
+    function getAll() {
     
-
-
-  function getAll() {
-    console.log(url_link)
-    axios.get(url_link)
+    axios.get(url_get_all)
       .then((response) => {
         setData(response.data.data)
       })
-  }
-  console.log("la respuesta es",data)
+    }
 
 
    return (
@@ -41,7 +38,7 @@ function ProjectList() {
             
             {data.map((projects, index) => (
             
-            <a href={`/cursos/${projects.id}`} class="nothing col-log-6 col-md-3 col-12">
+            <a href={`/projects/${projects.id}`} class="nothing col-log-6 col-md-3 col-12">
                 <div class="card shadow-lg m-3 courses" key={index}>
                 <DummyImage className="imageCard" bgColor='#0a1929' fgColor='aqua' />
                 <div class="card-body">

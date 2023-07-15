@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { DummyImage } from 'react-simple-placeholder-image'
 import Swal from "sweetalert2";
-import ProjectList from "./ProjectList";
+import ProjectList from "./Projects/ProjectList";
 
 
 function Home() {

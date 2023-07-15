@@ -7,6 +7,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 
+import ProjectCreate from "./components/Projects/ProjectCreate";
+import ProjectEdit from "./components/Projects/ProjectEdit";
+import ProjectView from "./components/Projects/ProjectView";
+
 
 
 function App() {
@@ -18,9 +22,12 @@ function App() {
       <Routes>
 
 
-        {/* protected routes routes  */}
-          <Route path="/" exact element={<Home />}></Route>
+          <Route path="/projects/add" element={<ProjectCreate />} />
+          <Route path="/projects/edit/:id" element={<ProjectEdit />} />
 
+        {/* Public routes  */}
+          <Route path="/" exact element={<Home />}></Route>
+          <Route path="/projects/:id" element={<ProjectView />} />
 
 
       </Routes>
